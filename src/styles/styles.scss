@@ -1,0 +1,215 @@
+// 导航栏
+.el-menu-item, .el-submenu__title {
+  height: 45px;
+  line-height: 45px;
+}
+.el-submenu .el-menu-item {
+  height: 45px;
+  line-height: 45px;
+}
+.el-submenu [class^=fa] {
+  vertical-align: baseline;
+  margin-right: 10px;
+}
+.el-menu-item [class^=fa] {
+  vertical-align: baseline;
+  margin-right: 10px;
+}
+
+// 表格
+.el-table {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  background-color: #fff;
+  border: 1px solid #dfe6ec;
+  font-size: 14px;
+}
+.el-table thead {
+  color: black;
+  font-weight: 500;
+}
+.el-table .cell {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: break-all;
+  line-height: 30px;
+  margin-bottom: 0px;
+}
+.el-table th {
+  padding: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background-color: #e4e8f1;
+  user-select: none;
+  text-align: left;
+  height: 18px;
+}
+.el-table td {
+  padding: 5px 0;
+}
+
+// 折叠面板样式
+.el-collapse {
+  border-bottom: 0;
+}
+.el-collapse-item__header {
+  height: 30px;
+  line-height: 30px;
+  font-weight: 600;
+}
+.el-collapse-item__arrow {
+  line-height: 30px;
+}
+.el-collapse-item__content {
+  padding-bottom: 0px;
+  font-size: 13px;
+  color: #303133;
+  line-height: 1.769230769230769;
+}
+.el-collapse-item:last-child {
+  margin-bottom: 8px;
+}
+
+// 分页
+.el-pager li {
+  padding: 0 4px;
+  border-right: 0;
+  background: #fff;
+  font-size: 13px;
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+}
+.el-pager li.active {
+  border-color: #20a0ff;
+  background-color: #20a0ff;
+  color: #fff;
+  cursor: default;
+}
+
+// 普通表单
+.el-form-item--small.el-form-item {
+  margin-bottom: 10px;
+}
+
+// 含校验信息的表单
+.rule-form .el-form-item{
+  margin-bottom: 15px;
+}
+// input标题样式
+.el-input-group__prepend{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0 10px;
+}
+// 查询条件区域日期选择框
+.el-date-editor.el-input {
+  width: 100%;
+}
+// 查询条件区域日期范围选择框
+.el-date-editor--daterange.el-input__inner, .el-date-editor--monthrange.el-input__inner {
+  width: 100%;
+}
+// 按钮图标
+.button-icon {
+  padding-right: 5px;
+}
+// 页签
+.el-tabs__header {
+  margin-bottom: 10px;
+}
+
+// 模态框样式
+.el-dialog__body {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: inherit;
+}
+
+// 卡片header样式
+.el-card__header {
+  padding: 5px 15px;
+}
+
+.el-tooltip__popper {
+  max-width: 500px;
+  line-height: 110%;
+  white-space: normal;
+  word-break: break-all;
+}
+// 穿梭框
+.el-transfer-panel {
+  width: 40%;
+}
+
+/*fade-transform*/
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .3s;
+  .content-shade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: #000;
+    z-index: 100;
+  }
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.el-checkbox+.el-checkbox {
+  margin-left: 0px;
+}
+.el-checkbox {
+  margin-right: 25px;
+}
+.el-checkbox__label {
+  width: 45px;
+  font-size: 12px;
+}
+
+// IEf flex 布局兼容性
+.compatibe {
+  max-width: 100%;
+}
+
+// 提示框
+.el-notification__content {
+  word-break: break-all;
+}
+
+// 站内信分页用
+.notice .el-tabs__content {
+  height: 100%;
+  overflow: auto;
+  padding: 5px;
+}
+
+// 站内信分页页码 主要针对IE调整
+.el-pagination--small .el-pagination__editor, .el-pagination--small .el-pagination__editor.el-input .el-input__inner{
+  line-height: 22px;
+}
+
+// 文本域字体样式修改
+.el-textarea__inner{
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  font-size: 14px;
+}
+.el-form-item--small .el-form-item__content, .el-form-item--small .el-form-item__label {
+  color: #606266;
+}

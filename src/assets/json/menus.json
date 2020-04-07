@@ -1,0 +1,12 @@
+[
+  {
+    "name": "系统配置",
+    "icon": "system-config",
+    "children": [
+      {
+        "name": "字典管理",
+        "href": "dict-list"
+      }
+    ]
+  }
+]

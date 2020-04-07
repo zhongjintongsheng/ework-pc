@@ -9,8 +9,7 @@ function resolve (dir) {
 module.exports = {
   devServer: {
     port: {{ port }},
-    proxy: 'http://127.0.0.1:8080'
-    // proxy: 'http://172.16.210.11:7093'
+    proxy: 'http://172.17.121.211:7093'
   },
   publicPath: process.env.NODE_ENV === 'production'
     ? '/static/{{ projName }}'

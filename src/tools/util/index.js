@@ -89,6 +89,18 @@ function getDictTree () {
   return dictTree
 }
 
+// 获取字典数据的 optionKey
+function getDictOptionKey (dictType, optionCode) {
+  const dictArray = getStorage('dict')
+  if (!dictArray) {
+    return ''
+  }
+  if (!dictArray[dictType]) {
+    return ''
+  }
+  return dictArray[dictType].find(item => item.optionCode === optionCode).optionKey
+}
+
 // 判断文件大小是否超过限制
 function isFileOversize (file, size = config.MAX_FILE_SIZE) {
   return file.size / (1024 * 1024) > size
@@ -123,16 +135,13 @@ export default {
   lostTokenNotify,
   isFileOversize,
   amountFormat,
-  // sessionStore相关
   setStorage,
   getStorage,
   removeStorage,
   clearStorage,
-  // 创建分页查询参数
   handleQueryParam,
-  // 获取字典树
   getDictTree,
-  // 权限控制
+  getDictOptionKey,
   checkPermission,
   routerAuth
 }

@@ -13,6 +13,9 @@
       <el-form-item label="数据项名称：" prop="optionName">
         <el-input v-model="form.optionName" placeholder="请输入数据项名称" clearable class="input"></el-input>
       </el-form-item>
+      <el-form-item label="数据项编码：" prop="optionCode">
+        <el-input v-model="dialogForm.optionCode" placeholder="请输入数据项名称" clearable></el-input>
+      </el-form-item>
       <el-form-item label="数据项排序：" prop="showOrder">
         <el-input-number v-model="form.showOrder" :min="0" :max="100"></el-input-number>
       </el-form-item>
@@ -37,6 +40,7 @@ export default {
         dictName: '',
         optionKey: '',
         optionName: '',
+        optionCode: '',
         showOrder: 0
       },
       rules: {

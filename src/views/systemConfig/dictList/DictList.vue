@@ -57,6 +57,7 @@ export default {
         { label: '字典名称', prop: 'dictName', width: '120' },
         { label: '数据项关键字', prop: 'optionKey', width: '120' },
         { label: '数据项名称', prop: 'optionName', width: '120' },
+        { label: '数据项编码', prop: 'optionCode', width: '120' },
         { label: '数据项排序', prop: 'showOrder', width: '100' }
       ]
     }

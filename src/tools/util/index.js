@@ -98,7 +98,11 @@ function getDictOptionKey (dictType, optionCode) {
   if (!dictArray[dictType]) {
     return ''
   }
-  return dictArray[dictType].find(item => item.optionCode === optionCode).optionKey
+  let dict = dictArray[dictType].find(item => item.optionCode === optionCode)
+  if (!dict) {
+    return ''
+  }
+  return dict.optionKey
 }
 
 // 判断文件大小是否超过限制

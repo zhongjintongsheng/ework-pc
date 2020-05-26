@@ -238,18 +238,26 @@ function getAll (opts = {}) {
     })
 }
 
+// 控制登录次数（30S内只登录一次）
+let count = 0
 function devLogin () {
-  let param = {
-    loginName: config.LOGIN_NAME,
-    password: util.sha256(config.LOGIN_NAME + util.sha256(config.PASSWORD))
-  }
-  this.post({
-    url: apis.base.login,
-    param,
-    success: ({ data }) => {
-      util.setStorage('user', data)
+  if (!count) {
+    count++
+    let param = {
+      loginName: config.LOGIN_NAME,
+      password: util.sha256(config.LOGIN_NAME + util.sha256(config.PASSWORD))
     }
-  })
+    this.post({
+      url: apis.base.login,
+      param,
+      success: ({ data }) => {
+        util.setStorage('user', data)
+      }
+    })
+    setTimeout(() => {
+      count = 0
+    }, 30 * 1000)
+  }
 }
 
 /**

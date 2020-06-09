@@ -1,6 +1,7 @@
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const FileManagerPlugin = require('filemanager-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '.', dir)
@@ -62,6 +63,34 @@ module.exports = {
         },
         sourceMap: false,
         parallel: true
+      }))
+      config.plugins.push(new FileManagerPlugin({
+        onStart: [
+          {
+            delete: [path.join(config.output.path, '..', '{{ projName }}.zip')]
+          }
+        ],
+        onEnd: [
+          {
+            copy: [
+              {
+                source: config.output.path,
+                destination: path.join(config.output.path, '../temp-{{ projName }}/{{ projName }}')
+              }
+            ]
+          },
+          {
+            archive: [
+              {
+                source: path.join(config.output.path, '../temp-{{ projName }}'),
+                destination: path.join(config.output.path, '..', '{{ projName }}.zip')
+              }
+            ]
+          },
+          {
+            delete: [path.join(config.output.path, '../temp-{{ projName }}')]
+          }
+        ]
       }))
     }
   },
